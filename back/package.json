@@ -1,0 +1,24 @@
+{
+  "name": "zombostoragecom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/hiltonjp/zombostoragecom.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hiltonjp/zombostoragecom/issues"
+  },
+  "homepage": "https://github.com/hiltonjp/zombostoragecom#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "randexp": "^0.4.9"
+  }
+}

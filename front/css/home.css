@@ -1,0 +1,16 @@
+#content {
+  display: flex;
+}
+
+#sidebar {
+  width: 300px;
+  border: 1px solid black;
+  height: -webkit-fill-available;
+}
+
+#display {
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  border: 1px solid black;
+
+}

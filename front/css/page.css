@@ -1,0 +1,90 @@
+/*----- PAGE -----------------------------------------------------------------------------------*/
+html,body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+.mobi {
+  display: none;
+}
+
+.page {
+  min-height: 100%;
+  position: relative;
+
+  border: 1px solid black;
+}
+
+header {
+  width: 100%;
+  display: table;
+  height: 80px;
+}
+
+#sitename {
+
+  position: absolute;
+  margin: 24px;
+  font-size: 32px;
+}
+
+#sitename a {
+  color: black;
+}
+
+#sitename a:hover {
+  cursor: pointer;
+}
+
+#content {
+  padding-bottom: 60px; /* height of footer */
+  border: 1px solid black;
+  height: -webkit-fill-available;
+}
+
+ul {list-style: none;}
+
+a {text-decoration: none;}
+
+/*----- MENU -------------------------------------------------------------------------------------*/
+@media screen and (min-width: 600px) {
+  nav {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  nav ul {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  ul a {
+    display: inline-block;
+    text-decoration: none;
+    margin: 18px;
+    padding: 4px;
+  }
+}
+
+/*----- FOOTER -----------------------------------------------------------------------------------*/
+footer {
+  display: block;
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border: 1px solid black;
+}
+
+footer ul {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+footer ul a {
+  display: inline-block;
+  margin: 18px;
+  padding: 4px;
+}

@@ -1,0 +1,23 @@
+@media screen and (max-width: 600px) {
+  #sidebar {
+    display: none;
+  }
+
+
+  #content {
+    padding-bottom: 150px; /* height of footer */
+  }
+
+  footer {
+    height: 150px; /*adjust based on number of links */
+  }
+
+  footer ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer ul a {
+    margin: 6px auto;
+  }
+}
