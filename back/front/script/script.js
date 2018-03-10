@@ -32,6 +32,18 @@ var zombo = new Vue({
         this.zombos.unshift(response.data);
         this.getStats();
       });
+    },
+    deleteZombo: function(zombo) {
+      axios.delete("http://localhost:25565/zombo/zombos/mine/" + zombo.id).then(response => {
+        this.getStats();
+        this.getZombos();
+      })
+    },
+    copyZombo: function(zombo) {
+      axios.put("http://localhost:25565/zombo/zombos/mine/" + zombo.id).then(response => {
+        this.getStats();
+        this.getZombos();
+      });
     }
   },
   computed: {}

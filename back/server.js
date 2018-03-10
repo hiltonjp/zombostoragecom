@@ -54,8 +54,37 @@ app.post('/zombo/zombos/mine', (req,res) => {
   res.send(myZombo);
 });
 
-let port = 25565;
+app.put('/zombo/zombos/mine/:id', (req,res) => {
+  console.log("\n\nCOPY ITEM");
+  let id = parseInt(req.params.id);
+  let zombos = getZombo(req);
+  let copyIndex = zombos.map(item => { return item.id; }).indexOf(id);
+  zombobj = zombos.filter(zom => { return zom.id === id})[0];
+  zombobj2 = Object.assign({},zombobj);
 
+  let indeZ = indeceZ.get(req.ip);
+  zombobj2.id = indeZ;
+  indeceZ.set(req.ip, indeZ+1);
+  zombos.splice(copyIndex,0,zombobj2);
+  res.send(zombobj2);
+});
+
+app.delete('/zombo/zombos/mine/:id', (req,res) => {
+  console.log("\n\nDELETE ITEM");
+  let id = parseInt(req.params.id);
+  let removeIndex = getZombo(req).map(item => { return item.id; }).indexOf(id);
+  if (removeIndex === -1) {
+    res.status(404).send("Sorry, that item doesn't exist");
+    return;
+  }
+  let indeZ = indeceZ.get(req.ip);
+  indeceZ.set(req.ip, indeZ-1);
+  getZombo(req).splice(removeIndex, 1);
+  res.sendStatus(200);
+});
+
+
+let port = 25565;
 app.listen(port, () => { console.log("Server listening on port " + port);});
 
 //----- UTILITY METHODS --------------------------------------------------------------------------//
@@ -100,9 +129,10 @@ function postZombo(req) {
   }
 
   zombobj.size = Math.floor(Math.random()*5000);
+  let indeZ = indeceZ.get(req.ip);
+  zombobj.id = indeZ;
 
   zomboList.unshift(zombobj);
-  let indeZ = indeceZ.get(req.ip);
-  indeceZ.set(req.ip, indeZ + 1);
+  indeceZ.set(req.ip, indeZ+1);
   return zombobj;
 }
