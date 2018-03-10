@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Coiny|Fredoka+One" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/page.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/burgermenu.css">
+    <link rel="stylesheet" href="css/mobi.css">
+    <link rel="stylesheet" href="css/zombo.css">
+  </head>
+  <body>
+    <div id="zombo" class="zombo page">
+      <!-- FILE UPLOAD POPUP -->
+      <!--div class="holder">
+        <div id="popup" class="popup">
+          <div class="popup_content">
+            <p id="desc">Sacrifice one of your files to create and store your new Zombocom!</p>
+            <label class="fileContainer">Choose File
+              <input type="file"></input>
+            </label>
+            <br>
+            <input type="submit" v-on:click="addZombo()"></input>
+          </div>
+        </div>
+        <div id="darkbg"></div>
+      </div-->
+
+      <!-- SITE HEADER -->
+      <header class="zombo">
+        <!--h1 id="sitename"><a href="#">SITE NAME></a></h1-->
+        <a id="siteimg" href="#"><img src="images/zombocom_img.png"/></a>
+        <nav role="navigation">
+          <div id="menuToggle">
+            <input type="checkbox" class="zombo mobi"/>
+            <div id="burger" class="zombo mobi">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div id="menu">
+              <ul>
+                <a href="#"><li>Home</li></a>
+                <a href="#"><li>About</li></a>
+                <a href="#"><li>Info</li></a>
+                <a href="#"><li>Contact</li></a>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <!-- ZOMBO STORAGE -->
+      <div id="content">
+        <div id="centerable">
+          <div id="display">
+            <div id="addZombo" class="zombo" v-on:click="addZombo()">
+              <span></span>
+              <span></span>
+            </div>
+            <a v-for="zombo in zombos" class="zombo item" href="http://www.html5zombo.com" alt="visit your miniature zombocom!">
+              <div class="zombo box">
+                <img src="images/zombo.png" class="zombo minititle"/>
+                <img src="images/zombo_65004.gif" alt="" class="zombo gif"/>
+              </div>
+              <p class="zombo name">
+                <span class="char" style="color: black">"</span>
+                <span class="char" style="color: red">{{zombo.z}}</span>
+                <span class="char" style="color: orange">{{zombo.o1}}</span>
+                <span class="char" style="color: blue">{{zombo.m1}}</span>
+                <span class="char" style="color: #8800FF">{{zombo.b}}</span>
+                <span class="char" style="color: #00FFFF">{{zombo.o2}}</span>
+                <span class="char" style="color: #4444FF" v-if="zombo.dot !==''">{{zombo.dot}}</span>
+                <span class="char" style="color: orange" v-if="zombo.c !==''">{{zombo.c}}</span>
+                <span class="char" style="color: #00FF00" v-if="zombo.o3 !==''">{{zombo.o3}}</span>
+                <span class="char" style="color: blue" v-if="zombo.m2 !==''">{{zombo.m2}}</span>
+                <span class="char" style="color: black">"</span>
+              </p>
+              <p class="zombo siZeText">Size: {{zombo.size}}kB</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SITE FOOTER -->
+      <footer>
+        <ul>
+          <a href="#"><li>Repository</li></a>
+          <a href="#"><li>Inspiration</li></a>
+          <a href="#"><li>Golden</li></a>
+          <a href="#"><li>Zombocom</li></a>
+        </ul>
+      </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script src="script/script.js"></script>
+  </body>
+</html>

@@ -3,6 +3,12 @@
     display: none;
   }
 
+  #siteimg img {
+    margin: 20px;
+    margin-top: 24px;
+    width: 300px;
+    max-width: 75%;
+  }
 
   #content {
     padding-bottom: 150px; /* height of footer */

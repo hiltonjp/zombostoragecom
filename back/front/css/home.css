@@ -1,0 +1,211 @@
+#sidebar {
+  width: 300px;
+  /* border: 1px solid black; */
+  height: -webkit-fill-available;
+}
+
+#centerable {
+  display: inline-block;
+}
+
+#display {
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: flex-start;
+  margin: 0 auto;
+
+}
+
+#display::after {
+  content: "";
+  flex: auto;
+}
+
+#addZombo {
+  text-align: center;
+  width: 150px;
+  height: 150px;
+  margin: 50px;
+  border-radius: 110px;
+  box-shadow: 0px 2px 2px #00000044;
+  background: #EEEEEE;
+}
+
+#addZombo {
+  -moz-transition: all .2s;
+  -o-transition: all .2s;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+#addZombo:hover {
+  width: 220px;
+  height: 220px;
+  margin: 15px;
+  background: linear-gradient(#00BB66, white, white, white, white, white);
+  border-radius: 3px;
+}
+
+#addZombo:active {
+  transform: translateY(4px);
+}
+
+#addZombo span {
+  display: block;
+  margin: 0 auto;
+  width: 80px;
+  height: 24px;
+
+  position: relative;
+  top: 30%;
+  background: #232323;
+  border-radius: 3px;
+  z-index: 1;
+}
+
+#addZombo span:first-child {
+  transform: rotateZ(90deg) translateX(24px);
+}
+
+.box {
+  width: 220px;
+  height: 220px;
+  margin: 15px;
+  background: linear-gradient(#00BB66, white, white, white, white, white);
+  border-radius: 3px;
+  box-shadow: 0px 2px 5px #00000044;
+}
+
+.box {
+  -moz-transition: all .2s;
+  -o-transition: all .2s;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.box:hover {
+  transform: translateY(4px);
+}
+
+.minititle {
+  display: block;
+  margin: auto;
+  padding-top: 20px;
+  max-width: 75%;
+}
+
+.gif {
+  position: relative;
+  display: block;
+  max-width: 30%;
+  margin: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  opacity: 0.5;
+}
+
+.char {
+  margin: -2px;
+}
+
+.name {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 24px;
+  padding-top: 4px;
+  /* background: radial-gradient(white, #FFFFFF00);*/
+  font-family: 'Fredoka One', cursive;
+}
+
+.item {
+  margin-bottom: 40px;
+}
+
+/*
+#darkbg {
+  position: absolute;
+  background-color: #00000044;
+  height: -webkit-fill-available;
+  width: -webkit-fill-available;
+  z-index: 4;
+}
+
+.holder{
+  width:100%;
+  height: 100%;
+  background: #00000044;
+  display:block;
+  position: absolute;
+}
+
+.popup{
+  position: fixed;
+  width: 40%;
+  height: 400px;
+
+  background: white;
+  border-radius: 3px;
+  box-shadow: 0px 3px 5px #00000044;
+
+  margin: 30px auto 0;
+  padding:6px;
+
+  left: 50%;
+  top: 50%;
+  margin-left: -20%;
+  margin-top: -200px; /* This should be half of the total height of your div //
+
+  z-index: 5;
+}
+
+.popup_content{
+  background:#fff;
+  padding: 28px 26px 33px 25px;
+  text-align: center;
+}
+
+.popup_content p#desc {
+  font-family: 'Fredoka One', cursive;
+  font-size: 32px;
+  margin-bottom: 80px;
+}
+
+.popup_content input[type="file"] {
+  size: 60px;
+  position: relative;
+  z-index: 3;
+}
+
+.fileContainer {
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    background: #00BB66;
+}
+
+.fileContainer [type=file] {
+    cursor: inherit;
+    display: block;
+    min-height: 100%;
+    min-width: 100%;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 0;
+}
+*/
+
+.siZeText {
+  text-align: center;
+  font-family: 'Fredoka One', cursive;
+  font-weight: normal;
+  font-size: 16px;
+  color: black;
+  margin: 8px;
+}
