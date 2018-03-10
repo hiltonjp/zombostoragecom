@@ -12,19 +12,33 @@ let indeceZ = new Map();
 let zombo = new regex(/zombo(?:\.?com)?/i);
 
 // return the number of zombos stored on zombostoragecom
-app.get('/zombo/zombos/total', (req,res) => {
+app.get('/zombo/zombos/stats', (req,res) => {
   console.log("ip: " + req.ip);
   testIP(req);
   var yourZombos = indeceZ.get(req.ip);
+  var yourStorage = 0;
   var totalZombos = 0;
+  var totalStorage = 0;
+
   console.log("number of zombo users:" + Zmap.size);
   for (var val of indeceZ.values()) {
     totalZombos += val;
   }
+
+  for (var zombos of Zmap.values()) {
+    zombos.forEach(zom => {totalStorage += zom.size});
+  }
+  console.log("total storage: " + totalStorage);
+
+  getZombo(req).forEach(zom => { yourStorage += zom.size; });
+  console.log("your storage: " + yourStorage);
+
   console.log("yours: " + yourZombos + ", total: " + totalZombos);
   res.send({
-    yours: yourZombos,
-    total: totalZombos
+    yourZ: yourZombos,
+    totalZ: totalZombos,
+    yourS: yourStorage,
+    totalS: totalStorage
   });
 });
 

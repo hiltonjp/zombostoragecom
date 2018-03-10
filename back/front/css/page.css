@@ -4,6 +4,7 @@ html,body {
   margin: 0;
   height: 100%;
   background-color: #DDDDDD;
+  font-family: 'Fredoka One', cursive;
 }
 
 .mobi {
@@ -20,7 +21,8 @@ header {
   display: table;
   height: 80px;
   background: linear-gradient(#00BB66, white, white);
-  box-shadow: 0px 3px 3px #00000044;
+  box-shadow: 0px 1px 1px #00000044;
+  font-size: 24px;
 }
 
 #sitename {
@@ -52,15 +54,32 @@ header {
 
 #content {
   padding-bottom: 60px; /* height of footer */
-  height: -webkit-fill-available;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#centerable {
+  margin-top: 60px;
+  margin-left: 60px;
 }
 
 ul {list-style: none;}
 
-a {text-decoration: none;}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a {
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #00BB66;
+}
 
 /*----- MENU -------------------------------------------------------------------------------------*/
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 750px) {
   nav {
     display: table-cell;
     vertical-align: middle;
@@ -86,6 +105,9 @@ footer {
   position: absolute;
   left: 0;
   bottom: 0;
+  font-size: 24px;
+  background-color: white;
+  box-shadow: 0px -1px 1px #00000044;
   /* border: 1px solid black; */
 }
 

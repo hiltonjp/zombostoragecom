@@ -1,4 +1,4 @@
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 750px) {
   #sidebar {
     display: none;
   }
@@ -10,8 +10,13 @@
     max-width: 75%;
   }
 
+  #centerable {
+    margin: 0;
+  }
+
   #content {
     padding-bottom: 150px; /* height of footer */
+    justify-content: center;
   }
 
   footer {

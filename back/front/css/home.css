@@ -1,7 +1,15 @@
-#sidebar {
-  width: 300px;
-  /* border: 1px solid black; */
-  height: -webkit-fill-available;
+/*----- INFO BOX ---------------------------------------------------------------------------------*/
+#statsbox {
+  display: inline-block;
+  margin-top: 1px;
+  width: 100%;
+  background: white;
+  box-shadow: 0px 1px 1px #00000044;
+}
+
+#statsbox p {
+  font-size: 20px;
+  margin: 10px 20px;
 }
 
 #centerable {
@@ -31,7 +39,7 @@
   height: 150px;
   margin: 50px;
   border-radius: 110px;
-  box-shadow: 0px 2px 2px #00000044;
+  box-shadow: 0px 1px 1px #00000044;
   background: #EEEEEE;
 }
 
@@ -77,7 +85,7 @@
   margin: 15px;
   background: linear-gradient(#00BB66, white, white, white, white, white);
   border-radius: 3px;
-  box-shadow: 0px 2px 5px #00000044;
+  box-shadow: 0px 1px 1px #00000044;
 }
 
 .box {
