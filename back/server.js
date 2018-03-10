@@ -9,7 +9,9 @@ app.use(express.static('front'));
 
 let Zmap = new Map();
 let indeceZ = new Map();
+let users = new Map();
 let zombo = new regex(/zombo(?:\.?com)?/i);
+
 
 // return the number of zombos stored on zombostoragecom
 app.get('/zombo/zombos/stats', (req,res) => {
@@ -47,11 +49,23 @@ app.get('/zombo/zombos/mine', (req,res) => {
   res.send(getZombo(req));
 });
 
-
 app.post('/zombo/zombos/mine', (req,res) => {
   testIP(req);
   let myZombo = postZombo(req);
   res.send(myZombo);
+});
+
+app.get('/zombo/newZletter', (req,res) => {
+  console.log("TOTAL USERS: " + users.size);
+  res.send({
+    totalUsers: users.size
+  });
+});
+
+app.post('/zombo/newZletter', (req,res) => {
+  console.log("ADDING USER: " + req.body.username);
+  users.set(req.body.username, req.body);
+  res.send(req.body);
 });
 
 app.put('/zombo/zombos/mine/:id', (req,res) => {

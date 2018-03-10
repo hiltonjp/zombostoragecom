@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Coiny|Fredoka+One" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/page.css">
-    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/other.css">
     <link rel="stylesheet" href="css/burgermenu.css">
     <link rel="stylesheet" href="css/mobi.css">
     <link rel="stylesheet" href="css/zombo.css">
@@ -38,9 +38,19 @@
 
       <!-- ZOMBO STORAGE -->
       <div id="content">
-        <div id="infobox">
-          <p>Sorry this is completely functional right now. ThankZ for your patience.</p>
-
+        <div id="infobox2">
+          <p>Progress update: you can sign up for the newZletter. We just don't have one. ThankZ for your patience.</p>
+          <p>Total Users Signed Up: {{total}}</p>
+        </div>
+        <div id="formbox">
+          <h1>Sign Up for the NewZletter!</h1>
+          <form class="" action="index.html" method="post">
+            <input type="text" name="fname" placeholder="First Name" v-model="firstname">
+            <input type="text" name="lname" placeholder="Last Name" v-model="lastname">
+            <input type="email" name="email" placeholder="email@example.com" v-model="email">
+            <input type="text" name="uname" placeholder="Username" v-model="username">
+            <input type="submit" v-on:click.prevent="signUp()">
+          </form>
         </div>
       </div>
 
@@ -56,6 +66,6 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
-    <script src="script/script.js"></script>
+    <script src="script/newZletter.js"></script>
   </body>
 </html>

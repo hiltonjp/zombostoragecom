@@ -1,4 +1,15 @@
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 980px) {
+  #infobox {
+    margin-top: 20px;
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #statsbox p {
+    font-size: 12px;
+  }
+
   #sidebar {
     display: none;
   }
@@ -15,12 +26,12 @@
   }
 
   #content {
-    padding-bottom: 150px; /* height of footer */
+    padding-bottom: 180px; /* height of footer */
     justify-content: center;
   }
 
   footer {
-    height: 150px; /*adjust based on number of links */
+    height: 180px; /*adjust based on number of links */
   }
 
   footer ul {
