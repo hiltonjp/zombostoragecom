@@ -12,9 +12,6 @@
   margin: 10px 20px;
 }
 
-#centerable {
-  display: inline-block;
-}
 
 #display {
   width: -webkit-fill-available;
@@ -165,6 +162,13 @@
   right: 22px;
   height: 32px;
   width: 32px;
+}
+
+.item .renameButton {
+  bottom: 80px;
+  left: 22px;
+  height: 32px;
+  width: 100px;
 }
 
 .item:hover button {

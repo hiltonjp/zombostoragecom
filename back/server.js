@@ -83,6 +83,15 @@ app.put('/zombo/zombos/mine/:id', (req,res) => {
   res.send(zombobj2);
 });
 
+app.put('/zombo/zombos/mine/:id/rename', (req,res) => {
+  console.log("\n\nRENAME ITEM");
+  let id = parseInt(req.params.id);
+  let zombos = getZombo(req);
+  zombobj = zombos.filter(zom => {return zom.id === id})[0];
+  zombobj = renameZombo(zombobj);
+  res.send(zombobj);
+});
+
 app.delete('/zombo/zombos/mine/:id', (req,res) => {
   console.log("\n\nDELETE ITEM");
   let id = parseInt(req.params.id);
@@ -115,11 +124,24 @@ function getZombo(req) {
 }
 
 function postZombo(req) {
-  zomboList = Zmap.get(req.ip);
-  let myzombo = zombo.gen().split('');
+  let zomboList = Zmap.get(req.ip);
   let zombobj = {};
 
+  zombobj = renameZombo(zombobj);
 
+  zombobj.size = Math.floor(Math.random()*5000);
+  let indeZ = indeceZ.get(req.ip);
+  zombobj.id = indeZ;
+
+  zomboList.unshift(zombobj);
+  indeceZ.set(req.ip, indeZ+1);
+  return zombobj;
+}
+
+
+function renameZombo(zombobj) {
+  let myzombo = zombo.gen().split('');
+  console.log("Zombo Name: " + myzombo);
   let n = 0;
   zombobj.z= myzombo[n++];
   zombobj.o1 = myzombo[n++];
@@ -142,11 +164,5 @@ function postZombo(req) {
     zombobj.m2 = "";
   }
 
-  zombobj.size = Math.floor(Math.random()*5000);
-  let indeZ = indeceZ.get(req.ip);
-  zombobj.id = indeZ;
-
-  zomboList.unshift(zombobj);
-  indeceZ.set(req.ip, indeZ+1);
   return zombobj;
 }

@@ -42,4 +42,14 @@
   footer ul a {
     margin: 6px auto;
   }
+
+  .item button {
+    display: inline-block;
+    opacity: 1;
+  }
+
+  .item:hover {
+    transform: translateY(0px);
+    transition: transform .2s;
+  }
 }

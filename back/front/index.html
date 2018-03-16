@@ -47,6 +47,7 @@
             <span></span>
           </div>
           <div v-for="zombo in zombos" class="zombo item">
+            <button class="renameButton" v-on:click="renameZombo(zombo)">RENAME</button>
             <button class="copyButton" v-on:click="copyZombo(zombo)">COPY</button>
             <button class="delButton" v-on:click="deleteZombo(zombo)">X</button>
             <a class="zombo" href="http://www.html5zombo.com" alt="visit your miniature zombocom!">
